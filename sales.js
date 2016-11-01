@@ -6,12 +6,15 @@ function addItem()
   newItem = document.getElementById("price").value;
   if (isNaN(newItem))
   {
-    window.alert("This is not a number!");
+    window.alert("Enter price as a number!");
   }
-  else 
+  else
   {
-
+    newItem = Number(runningTotal + newItem);
+    var dollars= asCurrency(runningTotal);
+    setCookie ("preTax",runningTotal, 10) ;
   }
+
   //IF newItem is not a number
   // THEN show an alert: "Enter price as a number"
   //OTHERWISE,
