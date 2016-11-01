@@ -10,9 +10,14 @@ function addItem()
   }
   else
   {
-    newItem = Number(runningTotal + newItem);
+    newItem = Number(newItem);
+    runningTotal= runningTotal + newItem;
     var dollars= asCurrency(runningTotal);
+    console.log (dollars);
     setCookie ("preTax",runningTotal, 10) ;
+    document.getElementById("subtotal").innerHTML= dollars.toString();
+    document.getElementById("price").value ="";
+
   }
 
   //IF newItem is not a number
